@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "description": "MalkovSV cv-portfolio site",
+  "homepage": "https://github.com/Dedal88/my-portfolio-site#readme",
+  "bugs": {
+    "url": "https://github.com/Dedal88/my-portfolio-site/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dedal88/my-portfolio-site.git"
+  },
+  "license": "ISC",
+  "author": "MalkovSV",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "style": "sass --watch src/sass/style.scss src/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.96.0"
+  }
+}
