@@ -1,7 +1,14 @@
+@use '../abstracts/varibles' as *;
+
 %font-prim {
   font-family: 'Rubik', Verdana, sans-serif;
 }
 
 %transition {
   transition: all 0.3s ease-out;
+}
+
+%gradient-border {
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, $color-linear-1, $color-linear-2) 1;
 }

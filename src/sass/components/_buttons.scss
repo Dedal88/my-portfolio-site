@@ -6,8 +6,7 @@
   padding: 0 12px;
   cursor: pointer;
   @include font($size: 1.6rem, $color: $color-grey-1);
-  border: 1px solid transparent;
-  border-image: linear-gradient(to right, $color-linear-1, $color-linear-2) 1;
+  @extend %gradient-border;
   position: relative;
   overflow: hidden;
   background: transparent;

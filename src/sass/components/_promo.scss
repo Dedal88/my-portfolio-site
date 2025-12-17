@@ -1,0 +1,47 @@
+@use '../abstracts/varibles' as *;
+@use '../abstracts/placeholders' as *;
+@use '../abstracts/mixins' as *;
+
+.promo__wrapper {
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.promo__decorate-element {
+  left: 0;
+  top: 250px;
+}
+
+.promo__photo {
+  width: 180px;
+  height: 227px;
+  @extend %gradient-border;
+  display: inline-block;
+}
+
+.promo__content {
+  width: 82%;
+}
+
+.promo__title {
+  font-size: 3.5rem;
+  width: 75%;
+  margin-bottom: 16px;
+}
+
+.promo__text {
+  @include font($size: 2rem, $color: $color-grey-2);
+  margin-bottom: 8px;
+  text-indent: 1em;
+  text-align: justify;
+}
+
+.promo__buttons {
+  margin-top: 20px;
+}
+
+.promo__button {
+  height: 32px;
+  margin-right: 8px;
+}

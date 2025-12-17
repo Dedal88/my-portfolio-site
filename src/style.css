@@ -60,6 +60,11 @@ body {
   transition: all 0.3s ease-out;
 }
 
+.promo__photo, .button {
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, #0cbaf1, #e95ce9) 1;
+}
+
 html {
   font-size: 10px;
 }
@@ -147,8 +152,6 @@ body {
   font-style: normal;
   font-weight: normal;
   color: #b0b0b2;
-  border: 1px solid transparent;
-  border-image: linear-gradient(to right, #0cbaf1, #e95ce9) 1;
   position: relative;
   overflow: hidden;
   background: transparent;
@@ -172,6 +175,52 @@ body {
 }
 .button:active {
   transform: translateY(1px);
+}
+
+.promo__wrapper {
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.promo__decorate-element {
+  left: 0;
+  top: 250px;
+}
+
+.promo__photo {
+  width: 180px;
+  height: 227px;
+  display: inline-block;
+}
+
+.promo__content {
+  width: 82%;
+}
+
+.promo__title {
+  font-size: 3.5rem;
+  width: 75%;
+  margin-bottom: 16px;
+}
+
+.promo__text {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: normal;
+  color: #d1d1d1;
+  margin-bottom: 8px;
+  text-indent: 1em;
+  text-align: justify;
+}
+
+.promo__buttons {
+  margin-top: 20px;
+}
+
+.promo__button {
+  height: 32px;
+  margin-right: 8px;
 }
 
 /*# sourceMappingURL=style.css.map */
