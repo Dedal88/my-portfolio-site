@@ -1,0 +1,35 @@
+@use '../abstracts/placeholders' as *;
+@use '../abstracts/varibles' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+  height: 114px;
+  display: flex;
+  align-items: center;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header__decorate-element {
+  top: 0;
+  right: 0;
+}
+
+.header__navigation {
+  .navigation {
+    display: flex;
+  }
+  .navigation__link {
+    margin-right: 50px;
+    @include styled-link;
+  }
+}
+
+.header__button {
+  height: 40px;
+}

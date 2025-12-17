@@ -16,9 +16,10 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "style": "sass --watch src/sass/style.scss src/style.css"
+    "style": "sass --watch src/sass/main.scss src/style.css"
   },
   "devDependencies": {
+    "normalize.css": "^8.0.1",
     "sass": "^1.96.0"
   }
 }

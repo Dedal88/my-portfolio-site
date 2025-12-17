@@ -1,3 +1,177 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  font-family: "Rubik", Verdana, sans-serif;
+}
+
+.button::after, .header__navigation .navigation__link, .logo {
+  transition: all 0.3s ease-out;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: normal;
+  color: #ffffff;
+  background-color: #18181b;
+}
+
+.logo {
+  display: flex;
+  width: 160px;
+  height: 40px;
+  align-items: center;
+  cursor: pointer;
+  color: #b0b0b2;
+}
+.logo:hover {
+  color: #ffffff;
+}
+
+.logo__image {
+  border-radius: 8px;
+  width: 40px;
+  margin-right: 6px;
+}
+
+.header {
+  height: 114px;
+  display: flex;
+  align-items: center;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header__decorate-element {
+  top: 0;
+  right: 0;
+}
+
+.header__navigation .navigation {
+  display: flex;
+}
+.header__navigation .navigation__link {
+  margin-right: 50px;
+  cursor: pointer;
+  color: #b0b0b2;
+}
+.header__navigation .navigation__link:hover {
+  color: #ffffff;
+}
+
+.header__button {
+  height: 40px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.decorate-element {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.navigation {
+  font-size: 1.7rem;
+  line-height: 2.8rem;
+}
+
+.button {
+  padding: 0 12px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: normal;
+  color: #b0b0b2;
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, #0cbaf1, #e95ce9) 1;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+.button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, #0cbaf1, #e95ce9);
+  opacity: 0;
+  z-index: -1;
+}
+.button:hover::after {
+  opacity: 1;
+}
+.button:hover {
+  color: #ffffff;
+}
+.button:active {
+  transform: translateY(1px);
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,39 @@
+@use '../abstracts/varibles' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
+
+.button {
+  padding: 0 12px;
+  cursor: pointer;
+  @include font($size: 1.6rem, $color: $color-grey-1);
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, $color-linear-1, $color-linear-2) 1;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, $color-linear-1, $color-linear-2);
+    opacity: 0;
+    @extend %transition;
+    z-index: -1;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &:hover {
+    color: $color-white;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
