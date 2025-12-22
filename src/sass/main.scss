@@ -7,7 +7,9 @@
 @use 'layout/header';
 @use 'layout/wrapper';
 @use 'layout/decorate-element';
+@use 'layout/columns';
 
 @use 'components/navigation';
 @use 'components/buttons';
 @use 'components/promo';
+@use 'components/projects';
