@@ -56,13 +56,8 @@ body {
   font-family: "Rubik", Verdana, sans-serif;
 }
 
-.button::after, .header__navigation .navigation__link, .logo {
-  transition: all 0.3s ease-out;
-}
-
-.promo__photo, .button {
-  border: 1px solid transparent;
-  border-image: linear-gradient(to right, #0cbaf1, #e95ce9) 1;
+.project, .project__button-wrapper, .button::after, .header__navigation .navigation__link, .logo {
+  transition: all 0.5s ease-out;
 }
 
 html {
@@ -146,7 +141,7 @@ body {
   justify-content: space-between;
 }
 .layout-3-column > * {
-  flex-basis: 30%;
+  flex-basis: 29%;
 }
 
 .navigation {
@@ -161,6 +156,8 @@ body {
   font-style: normal;
   font-weight: normal;
   color: #b0b0b2;
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, #0cbaf1, #e95ce9) 1;
   position: relative;
   overflow: hidden;
   background: transparent;
@@ -194,12 +191,14 @@ body {
 
 .promo__decorate-element {
   left: 0;
-  top: 250px;
+  top: 630px;
 }
 
 .promo__photo {
   width: 180px;
   height: 227px;
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, #0cbaf1, #e95ce9) 1;
   display: inline-block;
 }
 
@@ -211,6 +210,10 @@ body {
   font-size: 3.5rem;
   width: 75%;
   margin-bottom: 16px;
+  font-size: 3.8rem;
+  font-style: normal;
+  font-weight: normal;
+  color: #ffffff;
 }
 
 .promo__text {
@@ -237,12 +240,70 @@ body {
   padding-bottom: 150px;
 }
 
+.project {
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  background: #252532;
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, #d1d1d1, #252532) 1;
+}
+.project > * {
+  margin-top: 8%;
+  margin-left: 7%;
+}
+.project:hover {
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, #0cbaf1, #e95ce9) 1;
+}
+.project {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.project.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project__button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.project__button {
+  height: 40px;
+}
+
+.project__button-wrapper:not(.project__button_disabled_true) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .projects__title {
-  font-size: 3.5rem;
+  font-size: 3.7rem;
   font-style: normal;
   font-weight: normal;
   color: #ffffff;
   margin-bottom: 50px;
+}
+
+.project__title {
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.project__text {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: normal;
+  color: #d1d1d1;
 }
 
 /*# sourceMappingURL=style.css.map */

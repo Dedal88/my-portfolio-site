@@ -7,7 +7,60 @@
   padding-bottom: 150px;
 }
 
+.project {
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  background: $color-black-50;
+  @include gradient-border($color1: $color-grey-2, $color2: $color-black-50);
+
+  > * {
+    margin-top: 8%;
+    margin-left: 7%;
+  }
+
+  &:hover {
+    @include gradient-border();
+  }
+
+  @extend %transition;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.project.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project__button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  @extend %transition;
+}
+
+.project__button {
+  height: 40px;
+}
+
+.project__button-wrapper:not(.project__button_disabled_true) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .projects__title {
-  @include font($size: 3.5rem);
+  @include font($size: 3.7rem);
   margin-bottom: 50px;
+}
+
+.project__title {
+  @include font($size: 1.8rem);
+}
+
+.project__text {
+  @include font($size: 1.6rem, $color: $color-grey-2);
 }

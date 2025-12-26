@@ -25,3 +25,8 @@
     flex-basis: $width;
   }
 }
+
+@mixin gradient-border($color1: $color-linear-1, $color2: $color-linear-2) {
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, $color1, $color2) 1;
+}

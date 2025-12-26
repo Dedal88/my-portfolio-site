@@ -1,20 +1,39 @@
 const dataProjects = [
   {
-    imageUrl: './img/icons/bulb.svg',
+    imageUrl: './src/img/icons/monitor.svg',
     title: 'Проект 1',
     description: 'Текст описывающий проект 1',
     deployUrl: '',
   },
   {
-    imageUrl: './img/icons/bulb.svg',
+    imageUrl: './src/img/icons/monitor.svg',
     title: 'Проект 2',
     description: 'Текст описывающий проект 2',
     deployUrl: '',
   },
   {
-    imageUrl: './img/icons/bulb.svg',
+    imageUrl: './src/img/icons/monitor.svg',
     title: 'Проект 3',
     description: 'Текст описывающий проект 3',
+    deployUrl: '',
+  },
+
+  {
+    imageUrl: './src/img/icons/monitor.svg',
+    title: 'Проект 4',
+    description: 'Текст описывающий проект 4',
+    deployUrl: '',
+  },
+  {
+    imageUrl: './src/img/icons/monitor.svg',
+    title: 'Проект 5',
+    description: 'Текст описывающий проект 5',
+    deployUrl: '',
+  },
+  {
+    imageUrl: './src/img/icons/monitor.svg',
+    title: 'Проект 6',
+    description: 'Текст описывающий проект 6',
     deployUrl: '',
   },
 ];
@@ -49,6 +68,7 @@ function createProject(options) {
     classes: ['project__image'],
   });
   projectImage.setAttribute('src', imageUrl);
+  projectImage.setAttribute('alt', 'project image');
 
   const projectTitle = createElement({
     tag: 'h4',
@@ -62,28 +82,76 @@ function createProject(options) {
     text: description,
   });
 
+  const buttonWrapper = createElement({
+    classes: ['project__button-wrapper', 'project__button_disabled_true'],
+  });
+
   const projectButton = createElement({
     tag: 'button',
     text: 'Посмотреть деплой',
-    classes: ['button', 'project__button', 'project__button_disabled_true'],
+    classes: ['button', 'project__button'],
   });
 
-  const buttonWrapper = createElement({ tag: 'a' });
-  buttonWrapper.setAttribute('href', deployUrl);
-  buttonWrapper.setAttribute('target', '_blank');
-  buttonWrapper.append(projectButton);
+  const projectButtonLink = createElement({
+    tag: 'a',
+  });
+  projectButtonLink.setAttribute('href', deployUrl);
+  projectButtonLink.setAttribute('target', '_blank');
+  projectButtonLink.append(projectButton);
+  buttonWrapper.append(projectButtonLink);
 
   projectWrapper.append(projectImage, projectTitle, projectText, buttonWrapper);
+  projectWrapper.addEventListener('mouseenter', (e) => {
+    buttonWrapper.classList.remove('project__button_disabled_true');
+  });
+
+  projectWrapper.addEventListener('mouseleave', () => {
+    buttonWrapper.classList.add('project__button_disabled_true');
+  });
 
   return projectWrapper;
 }
 
-function addElements(parent, dataElement) {
+function addElementsLadder(parent, dataElement) {
+  let countElements = 3;
+  let counterMultiplier = 3;
+
   dataElement.forEach((element) => {
-    parent.append(createProject(element));
+    const htmlElement = createProject(element);
+    htmlElement.style.marginTop = `${
+      37 * (countElements - counterMultiplier)
+    }px`;
+    counterMultiplier--;
+    if (counterMultiplier === 0) {
+      countElements = 3;
+      counterMultiplier = 3;
+    }
+    parent.append(htmlElement);
   });
 }
 
 const projectsContainer = document.querySelector('.projects__wrapper');
 
-addElements(projectsContainer, dataProjects);
+addElementsLadder(projectsContainer, dataProjects);
+
+const elementsToWatch = projectsContainer.children;
+
+const observerCallback = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    }
+  });
+};
+
+const observerOptions = {
+  rootMargin: '0px 0px -50px 0px',
+  threshold: 0.2,
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+for (element of elementsToWatch) {
+  observer.observe(element);
+}
