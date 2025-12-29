@@ -1,0 +1,47 @@
+@use '../abstracts/varibles' as *;
+@use '../abstracts/placeholders' as *;
+@use '../abstracts/mixins' as *;
+
+.footer__wrapper {
+  display: flex;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, $color-grey-1, transparent);
+  }
+}
+
+.footer__left-side {
+  width: 29%;
+}
+
+.footer__right-side {
+  width: 29%;
+  margin-top: 17px;
+}
+
+.footer__social-icons {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.contact {
+  @include font($size: 1.7rem, $color: $color-grey-2);
+}
+
+.contact__footer {
+  margin-bottom: 36px;
+}
+
+.footer__copyright {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+  @include font($size: 1.4rem, $color: $color-grey-1);
+}
