@@ -56,7 +56,7 @@ body {
   font-family: "Rubik", Verdana, sans-serif;
 }
 
-.project, .project__button-wrapper, .button::after, .header__navigation .navigation__link, .social-icon, .social-icon__image, .logo {
+.project, .project__button-wrapper, .button::after, .header, .header__navigation .navigation__link, .social-icon, .social-icon__image, .logo {
   transition: all 0.5s ease-out;
 }
 
@@ -70,6 +70,10 @@ body {
   font-weight: normal;
   color: #ffffff;
   background-color: #18181b;
+}
+
+.main-content {
+  padding-top: 114px;
 }
 
 .logo {
@@ -117,6 +121,9 @@ body {
   height: 114px;
   display: flex;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
 }
 
 .header__wrapper {
@@ -124,11 +131,6 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-}
-
-.header__decorate-element {
-  top: 0;
-  right: 0;
 }
 
 .header__navigation .navigation {
@@ -147,6 +149,12 @@ body {
   height: 40px;
 }
 
+.header_scrolled {
+  height: 80px;
+  background-color: rgba(49, 36, 57, 0.77);
+  backdrop-filter: blur(10px);
+}
+
 .wrapper {
   max-width: 1200px;
   margin: auto;
@@ -156,6 +164,11 @@ body {
   position: absolute;
   pointer-events: none;
   z-index: -1;
+}
+
+.top-right-corner-element {
+  top: 0;
+  right: 0;
 }
 
 .layout-3-column {

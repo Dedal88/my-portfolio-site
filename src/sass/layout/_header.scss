@@ -6,6 +6,10 @@
   height: 114px;
   display: flex;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  @extend %transition;
 }
 
 .header__wrapper {
@@ -13,11 +17,6 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-}
-
-.header__decorate-element {
-  top: 0;
-  right: 0;
 }
 
 .header__navigation {
@@ -32,4 +31,10 @@
 
 .header__button {
   height: 40px;
+}
+
+.header_scrolled {
+  height: 80px;
+  background-color: rgba(49, 36, 57, 0.77);
+  backdrop-filter: blur(10px);
 }

@@ -18,12 +18,6 @@
   <body>
     <header class="header">
       <div class="wrapper header__wrapper">
-        <img
-          class="header__decorate-element decorate-element"
-          src="./src/img/backgrounds/rightCorner.svg"
-          alt=""
-          aria-hidden="true"
-        />
         <div class="header__line">
           <span class="hamburger">
             <span class="hamburger__line"></span>
@@ -45,107 +39,77 @@
         <button class="button header__button">Написать мне</button>
       </div>
     </header>
-    <div class="promo">
-      <div class="wrapper promo__wrapper">
-        <img
-          class="promo__decorate-element decorate-element"
-          src="./src/img/backgrounds/cells.svg"
-          alt=""
-          aria-hidden="true"
-        />
-        <img
-          class="promo__photo"
-          src="./src/img/promo/promo-photo.jpg"
-          alt="my photo"
-        />
-        <div class="promo__content">
-          <h1 class="promo__title">
-            Люблю работать с профессионалами и сам стремлюсь к высокому уровню!
-          </h1>
-          <p class="promo__text">
-            Здравствуйте, меня зовут Сергей. Я фронтенд-разработчик. С детства
-            меня привлекала сфера информационных технологий. Впервые я
-            познакомился с программированием во время обучения в Ивановской
-            государственной текстильной академии по специальности «Автоматизация
-            технологических процессов и производств». После получения высшего
-            образования я работал в различных смежных IT-областях —
-            телекоммуникации и связь, техническая поддержка пользователей,
-            программирование и информационная безопасность.
-          </p>
-          <p class="promo__text">
-            Последние несколько лет я активно повышаю квалификацию в области
-            фронтенд-разработки. На данный момент я успешно окончил курсы таких
-            онлайн-школ, как RS School и Codecademy, и имею соответствующие
-            сертификаты, в том числе по фреймворку React. Также имею
-            представление о фреймворке Next.js. Вот мой текущий стэк технологий:
-            ...
-          </p>
-          <p class="promo__text">
-            Имею опыт командной работы, умею слушать и готов понятно объяснять
-            другим членам команды, если это необходимо. С людьми общаюсь
-            уважительно и стараюсь сохранять позитивный настрой. Мне нравится
-            работать с профессионалами, и я сам стремлюсь к высокому
-            профессиональному уровню. Готов постоянно развиваться и контролирую
-            качество выполненных заданий. В настоящий момент нахожусь в поиске
-            работы и буду рад стать частью хорошей команды!
-          </p>
-          <div class="promo__buttons">
-            <button class="button promo__button">Опыт работы</button>
-            <button class="button promo__button">Документы об обучении</button>
+    <main class="main-content">
+      <img
+        class="top-right-corner-element decorate-element"
+        src="./src/img/backgrounds/rightCorner.svg"
+        alt=""
+        aria-hidden="true"
+      />
+      <div class="promo">
+        <div class="wrapper promo__wrapper">
+          <img
+            class="promo__decorate-element decorate-element"
+            src="./src/img/backgrounds/cells.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <img
+            class="promo__photo"
+            src="./src/img/promo/promo-photo.jpg"
+            alt="my photo"
+          />
+          <div class="promo__content">
+            <h1 class="promo__title">
+              Люблю работать с профессионалами и сам стремлюсь к высокому
+              уровню!
+            </h1>
+            <p class="promo__text">
+              Здравствуйте, меня зовут Сергей. Я фронтенд-разработчик. С детства
+              меня привлекала сфера информационных технологий. Впервые я
+              познакомился с программированием во время обучения в Ивановской
+              государственной текстильной академии по специальности
+              «Автоматизация технологических процессов и производств». После
+              получения высшего образования я работал в различных смежных
+              IT-областях — телекоммуникации и связь, техническая поддержка
+              пользователей, программирование и информационная безопасность.
+            </p>
+            <p class="promo__text">
+              Последние несколько лет я активно повышаю квалификацию в области
+              фронтенд-разработки. На данный момент я успешно окончил курсы
+              таких онлайн-школ, как RS School и Codecademy, и имею
+              соответствующие сертификаты, в том числе по фреймворку React.
+              Также имею представление о фреймворке Next.js. Вот мой текущий
+              стэк технологий: ...
+            </p>
+            <p class="promo__text">
+              Имею опыт командной работы, умею слушать и готов понятно объяснять
+              другим членам команды, если это необходимо. С людьми общаюсь
+              уважительно и стараюсь сохранять позитивный настрой. Мне нравится
+              работать с профессионалами, и я сам стремлюсь к высокому
+              профессиональному уровню. Готов постоянно развиваться и
+              контролирую качество выполненных заданий. В настоящий момент
+              нахожусь в поиске работы и буду рад стать частью хорошей команды!
+            </p>
+            <div class="promo__buttons">
+              <button class="button promo__button">Опыт работы</button>
+              <button class="button promo__button">
+                Документы об обучении
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="projects">
-      <div class="wrapper">
-        <h2 class="projects__title">Мои проекты</h2>
-        <div class="layout-3-column projects__wrapper">
-          <!-- <article class="project">
-            <img src="" alt="project 1" class="project__image" />
-            <h2 class="project__title">Проект 1</h2>
-            <p class="project__text">текст</p>
-            <button
-              class="button project__button project__button_disabled_true"
-            >
-              Кнопка
-            </button>
-          </article>
-          <article class="project">
-            <img src="" alt="project 2" class="project__image" />
-            <h2 class="project__title">Проект 2</h2>
-            <p class="project__text">текст</p>
-            <button
-              class="button project__button project__button_disabled_true"
-            >
-              Кнопка
-            </button>
-          </article>
-          <article class="project">
-            <img src="" alt="project 3" class="project__image" />
-            <h2 class="project__title">Проект 3</h2>
-            <p class="project__text">текст</p>
-            <button
-              class="button project__button project__button_disabled_true"
-            >
-              Кнопка
-            </button>
-          </article> -->
+      <div class="projects">
+        <div class="wrapper">
+          <h2 class="projects__title">Мои проекты</h2>
+          <div class="layout-3-column projects__wrapper"></div>
         </div>
       </div>
-    </div>
+    </main>
     <footer class="footer">
       <div class="wrapper footer__wrapper">
-        <!-- <div>
-          <a href="./index.html" class="logo">
-            <img src="./src/img/logo/logo.png" alt="logo" class="logo__image" />
-            Сергей
-          </a>
-        </div> -->
         <div class="footer__left-side">
-          <!-- <a href="./index.html" class="logo">
-            <img src="./src/img/logo/logo.png" alt="logo" class="logo__image" />
-            Сергей
-          </a> -->
           <div class="footer__social-icons">
             <a href="mailto:audit37msv@yandex.ru" class="social-icon">
               <img
@@ -198,7 +162,7 @@
         </div>
       </div>
       <div class="footer__copyright">
-        <p>© Copyright <span id="current-year">2026</span></p>
+        <p>© Copyright 2026</p>
       </div>
     </footer>
   </body>

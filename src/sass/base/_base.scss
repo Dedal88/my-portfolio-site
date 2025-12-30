@@ -11,3 +11,7 @@ body {
   @include font($size: 1.6rem);
   background-color: $color-black-100;
 }
+
+.main-content {
+  padding-top: 114px;
+}
