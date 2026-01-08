@@ -12,8 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/style.css" />
-    <link rel="stylesheet" href="" />
-    <script src="./src/index.js" defer></script>
+    <script src="./dist/main.bundle.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -32,7 +31,9 @@
             <li class="navigation__link">Домашняя</li>
             <li class="navigation__link">Обо мне</li>
             <li class="navigation__link">Портфолио</li>
-            <li class="navigation__link">Сертификаты</li>
+            <a href="./src/pages/certificates/certificates.html">
+              <li class="navigation__link">Сертификаты</li>
+            </a>
             <li class="navigation__link">Контакты</li>
           </ul>
         </nav>
@@ -102,8 +103,109 @@
       </div>
       <div class="projects">
         <div class="wrapper">
-          <h2 class="projects__title">Мои проекты</h2>
+          <div class="section-title__wrapper">
+            <h2 class="section-title">Мои проекты</h2>
+          </div>
           <div class="layout-3-column projects__wrapper"></div>
+        </div>
+      </div>
+      <div class="certificates">
+        <div class="wrapper">
+          <div class="section-title__wrapper">
+            <h2 class="section-title">Мои сертификаты</h2>
+          </div>
+          <div class="certificates__wrapper-main-page">
+            <div class="slider">
+              <div class="slider__line">
+                <img
+                  class="slider__img"
+                  src="./src/img/cert/frontend-rs.png"
+                  alt="certificate image"
+                />
+                <img
+                  class="slider__img"
+                  src="./src/img/cert/react-rs.png"
+                  alt="certificate image"
+                />
+                <img
+                  class="slider__img"
+                  src="./src/img/cert/react-additional.png"
+                  alt="certificate image"
+                />
+                <img
+                  class="slider__img"
+                  src="./src/img/cert/react-hooks.png"
+                  alt="certificate image"
+                />
+                <img
+                  class="slider__img"
+                  src="./src/img/cert/react-lifecycle-methods.png"
+                  alt="certificate image"
+                />
+                <img
+                  class="slider__img"
+                  src="./src/img/cert/react-state-management.png"
+                  alt="certificate image"
+                />
+                <img
+                  class="slider__img"
+                  src="./src/img/cert/ts.png"
+                  alt="certificate image"
+                />
+                <img
+                  class="slider__img"
+                  src="./src/img/cert/react-introduction.png"
+                  alt="certificate image"
+                />
+                <img
+                  class="slider__img"
+                  src="./src/img/cert/js-web.png"
+                  alt="certificate image"
+                />
+                <img
+                  class="slider__img"
+                  src="./src/img/cert/js.png"
+                  alt="certificate image"
+                />
+                <img
+                  class="slider__img"
+                  src="./src/img/cert/css.png"
+                  alt="certificate image"
+                />
+                <img
+                  class="slider__img"
+                  src="./src/img/cert/html.png"
+                  alt="certificate image"
+                />
+              </div>
+              <button class="slider__btn-prev">
+                <img
+                  src="./src/img/icons/arrow-left.svg"
+                  alt="icon arrow left"
+                />
+              </button>
+              <button class="slider__btn-next">
+                <img
+                  src="./src/img/icons/arrow-right.svg"
+                  alt="icon arrow right"
+                />
+              </button>
+              <div class="slider__indication">
+                <div class="slider__dot active-dot"></div>
+                <div class="slider__dot"></div>
+                <div class="slider__dot"></div>
+                <div class="slider__dot"></div>
+                <div class="slider__dot"></div>
+                <div class="slider__dot"></div>
+                <div class="slider__dot"></div>
+                <div class="slider__dot"></div>
+                <div class="slider__dot"></div>
+                <div class="slider__dot"></div>
+                <div class="slider__dot"></div>
+                <div class="slider__dot"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>

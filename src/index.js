@@ -1,3 +1,11 @@
+import {
+  createElement,
+  addElementsLadder,
+  animationAppearanceElements,
+} from '../src/modules/Utilities';
+
+import { headerScroll } from './modules/Header';
+
 const dataProjects = [
   {
     imageUrl: './src/img/icons/monitor.svg',
@@ -38,17 +46,7 @@ const dataProjects = [
   },
 ];
 
-function createElement(options) {
-  const { tag = 'div', text = '', classes = [] } = options;
-  const element = document.createElement(tag);
-  element.textContent = text;
-
-  if (classes.length > 0) {
-    element.classList.add(...classes);
-  }
-
-  return element;
-}
+headerScroll();
 
 function createProject(options) {
   const {
@@ -88,7 +86,7 @@ function createProject(options) {
 
   const projectButton = createElement({
     tag: 'button',
-    text: 'Посмотреть деплой',
+    text: 'Cмотреть деплой',
     classes: ['button', 'project__button'],
   });
 
@@ -112,57 +110,69 @@ function createProject(options) {
   return projectWrapper;
 }
 
-function addElementsLadder(parent, dataElement) {
-  let countElements = 3;
-  let counterMultiplier = 3;
-
-  dataElement.forEach((element) => {
-    const htmlElement = createProject(element);
-    htmlElement.style.marginTop = `${
-      37 * (countElements - counterMultiplier)
-    }px`;
-    counterMultiplier--;
-    if (counterMultiplier === 0) {
-      countElements = 3;
-      counterMultiplier = 3;
-    }
-    parent.append(htmlElement);
-  });
-}
-
 const projectsContainer = document.querySelector('.projects__wrapper');
 
-addElementsLadder(projectsContainer, dataProjects);
+addElementsLadder(projectsContainer, dataProjects, createProject);
 
 const elementsToWatch = projectsContainer.children;
+animationAppearanceElements(elementsToWatch);
 
-const observerCallback = (entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
-  });
-};
+////////////////slider//////////////////////////////
 
-const observerOptions = {
-  rootMargin: '0px 0px -50px 0px',
-  threshold: 0.2,
-};
+const sliderImages = document.querySelectorAll('.slider__img');
+const sliderLine = document.querySelector('.slider__line');
+const sliderDots = document.querySelectorAll('.slider__dot');
+const sliderBtnNext = document.querySelector('.slider__btn-next');
+const sliderBtnPrev = document.querySelector('.slider__btn-prev');
 
-const observer = new IntersectionObserver(observerCallback, observerOptions);
+let sliderCount = 0;
+let sliderWidth;
 
-for (element of elementsToWatch) {
-  observer.observe(element);
+window.addEventListener('resize', showSlide);
+
+sliderBtnNext.addEventListener('click', nextSlide);
+sliderBtnPrev.addEventListener('click', prevSlide);
+
+function showSlide() {
+  sliderWidth = document.querySelector('.slider').offsetWidth;
+  sliderLine.style.width = sliderWidth * sliderImages.length + 'px';
+  sliderImages.forEach((item) => (item.style.width = sliderWidth + 'px'));
+  rollSlider();
+}
+showSlide();
+
+function nextSlide() {
+  sliderCount++;
+  if (sliderCount >= sliderImages.length) {
+    sliderCount = 0;
+  }
+
+  rollSlider();
+  thisSlide(sliderCount);
 }
 
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('.header');
-  const scrollPosition = window.scrollY;
-
-  if (scrollPosition > 100) {
-    header.classList.add('header_scrolled');
-  } else {
-    header.classList.remove('header_scrolled');
+function prevSlide() {
+  sliderCount--;
+  if (sliderCount < 0) {
+    sliderCount = sliderImages.length - 1;
   }
+  rollSlider();
+  thisSlide(sliderCount);
+}
+
+function rollSlider() {
+  sliderLine.style.transform = `translateX(${-sliderCount * sliderWidth}px)`;
+}
+
+function thisSlide(index) {
+  sliderDots.forEach((item) => item.classList.remove('active-dot'));
+  sliderDots[index].classList.add('active-dot');
+}
+
+sliderDots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    sliderCount = index;
+    rollSlider();
+    thisSlide(sliderCount);
+  });
 });

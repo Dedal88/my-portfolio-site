@@ -4,7 +4,11 @@
 
 .projects {
   padding-top: 110px;
-  padding-bottom: 150px;
+  padding-bottom: 20px;
+}
+
+.projects__wrapper {
+  margin-top: 50px;
 }
 
 .project {
@@ -50,11 +54,6 @@
 .project__button-wrapper:not(.project__button_disabled_true) {
   opacity: 1;
   transform: translateY(0);
-}
-
-.projects__title {
-  @include font($size: 3.7rem);
-  margin-bottom: 50px;
 }
 
 .project__title {

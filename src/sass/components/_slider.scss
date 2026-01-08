@@ -1,0 +1,87 @@
+@use '../abstracts/placeholders' as *;
+@use '../abstracts/varibles' as *;
+@use '../abstracts/mixins' as *;
+
+.slider {
+  position: relative;
+  max-width: 800px;
+  overflow: hidden;
+  margin: 0 20px;
+  @include gradient-border($width: 5px);
+}
+
+.slider__line {
+  background-color: $color-white;
+  display: flex;
+  align-items: center;
+  transition: all 1s;
+}
+
+.slider__btn-prev {
+  position: absolute;
+  left: 1%;
+  top: 50%;
+  background-color: transparent;
+  border: none;
+}
+
+.slider__btn-next {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  background-color: transparent;
+  border: none;
+}
+
+.slider__indication {
+  display: flex;
+  column-gap: 10px;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 8px;
+}
+
+.slider__dot {
+  width: 16px;
+  height: 16px;
+  border: 1px solid $color-purple;
+}
+
+.slider__dot:hover {
+  background-color: $color-purple;
+}
+
+.active-dot {
+  background-color: $color-purple;
+}
+
+.slider__btn-next img,
+.slider__btn-prev img {
+  width: 50px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 850px) {
+  .slider__btn-next img,
+  .slider__btn-prev img {
+    width: calc(20px + (50 - 20) * ((100vw - 320px) / (850 - 320)));
+    // 50 - макс. ширина, которая нам нужна;
+    // 20, 20px - мин. ширина, которая нам нужна;
+    // 100vw - полная ширина экрана;
+    // 320, 320px - мин. разрешение до которого будет уменьш.......
+    // 850 - разрешение экрана, с которого начинает ужиматься slider
+  }
+
+  .slider__dot {
+    width: calc(10px + (16 - 10) * ((100vw - 320px) / (850 - 320)));
+    width: calc(20px + (16 - 10) * ((100vw - 320px) / (850 - 320)));
+  }
+
+  .slider__indication {
+    column-gap: calc(5px + (10 - 5) * ((100vw - 320px) / (850 - 320)));
+  }
+}
