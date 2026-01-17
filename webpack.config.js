@@ -1,32 +1,26 @@
-const path = require('path'); // Для работы с путями
+const path = require('path');
 
 module.exports = {
-  // Режим разработки (исправляет warning)
   mode: 'development',
 
-  //////////////////////////////////
-  // Разные entry points для разных страниц
   entry: {
-    main: './src/index.js', // Для index.html
-    certificates: './src/pages/certificates/script.js', // Для certificates.html
+    main: './src/index.js',
+    certificates: './src/pages/certificates/script.js',
   },
 
   output: {
-    // Используем [name] для создания разных файлов
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
 
   devtool: 'eval-source-map',
-  /////////////////////////////
 
-  // Настройка loaders для обработки JS (ES6+)
   module: {
     rules: [
       {
-        test: /\.js$/, // Для всех .js файлов
-        exclude: /node_modules/, // Исключаем node_modules
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -34,6 +28,9 @@ module.exports = {
               [
                 '@babel/preset-env',
                 {
+                  targets: '> 0.5%, not dead, not ie 11',
+                  useBuiltIns: 'usage',
+                  corejs: '3.47.0',
                   modules: 'commonjs',
                 },
               ],
@@ -44,11 +41,9 @@ module.exports = {
     ],
   },
 
-  // Разрешение расширений (чтобы Webpack находил .js файлы)
   resolve: {
     extensions: ['.js'],
   },
 
-  // Режим watch (опционально, можно оставить в команде)
-  watch: true, // Автоматическая пересборка при изменениях
+  watch: true,
 };

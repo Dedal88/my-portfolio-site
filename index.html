@@ -2,7 +2,10 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Сергей</title>
     <link rel="icon" href="./src/img/logo/logo.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,6 +40,37 @@
             <li class="navigation__link">Контакты</li>
           </ul>
         </nav>
+
+        <!-- Боковое меню (оно изначально скрыто) -->
+        <div class="sidebar-menu">
+          <div class="sidebar-menu__overlay"></div>
+          <div class="sidebar-menu__content">
+            <!-- Кнопка закрытия (крестик) -->
+            <button class="sidebar-menu__close-btn">
+              <img
+                class="sidebar-menu__close-btn-image"
+                src="./src/img/icons/close.svg"
+                alt="Закрыть меню"
+              />
+            </button>
+
+            <!-- Навигация (копируем из основного меню) -->
+            <nav class="sidebar-menu__navigation">
+              <ul class="navigation">
+                <li class="navigation__link sidebar-menu__link">Домашняя</li>
+                <li class="navigation__link sidebar-menu__link">Опыт работы</li>
+                <li class="navigation__link sidebar-menu__link">Портфолио</li>
+                <a href="./src/pages/certificates/certificates.html">
+                  <li class="navigation__link sidebar-menu__link">
+                    Сертификаты
+                  </li>
+                </a>
+                <li class="navigation__link sidebar-menu__link">Контакты</li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
         <button class="button header__button">Написать мне</button>
       </div>
     </header>

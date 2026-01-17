@@ -5,6 +5,7 @@ import {
 } from '../src/modules/Utilities';
 
 import { headerScroll } from './modules/Header';
+import { sidebarMenu } from './modules/sidebar-menu';
 
 const dataProjects = [
   {
@@ -47,6 +48,8 @@ const dataProjects = [
 ];
 
 headerScroll();
+
+sidebarMenu();
 
 function createProject(options) {
   const {

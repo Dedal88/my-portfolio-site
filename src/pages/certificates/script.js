@@ -4,6 +4,7 @@ import {
   animationAppearanceElements,
 } from '../../modules/Utilities';
 import { headerScroll } from '../../modules/Header';
+import { sidebarMenu } from '../../modules/sidebar-menu';
 
 const dataCertificates = [
   {
@@ -68,6 +69,8 @@ const dataCertificates = [
 ];
 
 headerScroll();
+
+sidebarMenu();
 
 function createCertificate(options) {
   const { imageUrl = '', accreditationUrl = '' } = options;

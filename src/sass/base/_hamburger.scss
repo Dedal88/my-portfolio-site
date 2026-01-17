@@ -1,0 +1,41 @@
+@use '../abstracts/varibles' as *;
+@use '../abstracts/placeholders' as *;
+@use '../abstracts/mixins' as *;
+
+%hamburger-line {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  background: $color-grey-2;
+  border-radius: 5px;
+  width: 100%;
+  height: 3px;
+}
+
+.hamburger {
+  display: none;
+  position: relative;
+  width: 31px;
+  height: 25px;
+  margin-right: 37px;
+  @include media-tablet {
+    display: inline-block;
+    cursor: pointer;
+  }
+  &::before {
+    @extend %hamburger-line;
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    @extend %hamburger-line;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.hamburger__line {
+  @extend %hamburger-line;
+  top: calc(50% - 1.5px);
+  left: 0;
+}

@@ -35,17 +35,50 @@
             <li class="navigation__link">Домашняя</li>
             <li class="navigation__link">Опыт работы</li>
             <li class="navigation__link">Портфолио</li>
-            <li class="navigation__link">Сертификаты</li>
+            <a href="../../pages/certificates/certificates.html">
+              <li class="navigation__link">Сертификаты</li>
+            </a>
             <li class="navigation__link">Контакты</li>
           </ul>
         </nav>
+
+        <!-- Боковое меню (оно изначально скрыто) -->
+        <div class="sidebar-menu">
+          <div class="sidebar-menu__overlay"></div>
+          <div class="sidebar-menu__content">
+            <!-- Кнопка закрытия (крестик) -->
+            <button class="sidebar-menu__close-btn">
+              <img
+                class="sidebar-menu__close-btn-image"
+                src="../../img/icons/close.svg"
+                alt="Закрыть меню"
+              />
+            </button>
+
+            <!-- Навигация (копируем из основного меню) -->
+            <nav class="sidebar-menu__navigation">
+              <ul class="navigation">
+                <li class="navigation__link sidebar-menu__link">Домашняя</li>
+                <li class="navigation__link sidebar-menu__link">Опыт работы</li>
+                <li class="navigation__link sidebar-menu__link">Портфолио</li>
+                <a href="../../pages/certificates/certificates.html">
+                  <li class="navigation__link sidebar-menu__link">
+                    Сертификаты
+                  </li>
+                </a>
+                <li class="navigation__link sidebar-menu__link">Контакты</li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
         <button class="button header__button">Написать мне</button>
       </div>
     </header>
     <main class="main-content">
       <img
         class="top-right-corner-element decorate-element"
-        src="./src/img/backgrounds/rightCorner.svg"
+        src="../../img/backgrounds/rightCorner.svg"
         alt=""
         aria-hidden="true"
       />
