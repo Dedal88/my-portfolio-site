@@ -2,6 +2,7 @@ import {
   createElement,
   addElementsLadder,
   animationAppearanceElements,
+  addElementsWithoutLadder,
 } from '../src/modules/Utilities';
 
 import { headerScroll } from './modules/Header';
@@ -48,10 +49,9 @@ const dataProjects = [
 ];
 
 headerScroll();
-
 sidebarMenu();
 
-function createProject(options) {
+function createProject(options, isMobile = false) {
   const {
     imageUrl = '',
     title = '',
@@ -83,9 +83,17 @@ function createProject(options) {
     text: description,
   });
 
-  const buttonWrapper = createElement({
-    classes: ['project__button-wrapper', 'project__button_disabled_true'],
-  });
+  let buttonWrapper;
+
+  if (isMobile) {
+    buttonWrapper = createElement({
+      classes: ['project__button-wrapper'],
+    });
+  } else {
+    buttonWrapper = createElement({
+      classes: ['project__button-wrapper', 'project__button_disabled_true'],
+    });
+  }
 
   const projectButton = createElement({
     tag: 'button',
@@ -102,23 +110,35 @@ function createProject(options) {
   buttonWrapper.append(projectButtonLink);
 
   projectWrapper.append(projectImage, projectTitle, projectText, buttonWrapper);
-  projectWrapper.addEventListener('mouseenter', (e) => {
-    buttonWrapper.classList.remove('project__button_disabled_true');
-  });
 
-  projectWrapper.addEventListener('mouseleave', () => {
-    buttonWrapper.classList.add('project__button_disabled_true');
-  });
+  if (!isMobile) {
+    projectWrapper.addEventListener('mouseenter', (e) => {
+      buttonWrapper.classList.remove('project__button_disabled_true');
+    });
 
+    projectWrapper.addEventListener('mouseleave', () => {
+      buttonWrapper.classList.add('project__button_disabled_true');
+    });
+  }
   return projectWrapper;
 }
 
 const projectsContainer = document.querySelector('.projects__wrapper');
-
-addElementsLadder(projectsContainer, dataProjects, createProject);
-
 const elementsToWatch = projectsContainer.children;
-animationAppearanceElements(elementsToWatch);
+
+const mediaQuery = window.matchMedia('(min-width: 768px)');
+
+function handleScreenChange(e) {
+  if (e.matches) {
+    addElementsLadder(projectsContainer, dataProjects, createProject);
+  } else {
+    addElementsWithoutLadder(projectsContainer, dataProjects, createProject);
+  }
+  animationAppearanceElements(elementsToWatch);
+}
+
+handleScreenChange(mediaQuery);
+mediaQuery.addEventListener('change', handleScreenChange);
 
 ////////////////slider//////////////////////////////
 

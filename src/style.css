@@ -267,6 +267,17 @@ body {
   height: 1px;
   background: linear-gradient(90deg, transparent, #b0b0b2, transparent);
 }
+@media (max-width: 768px) {
+  .footer__wrapper {
+    margin-left: 50px;
+  }
+  .footer__wrapper .footer__right-side {
+    display: none;
+  }
+  .footer__wrapper .social-icon {
+    margin-bottom: 30px;
+  }
+}
 
 .footer__left-side {
   width: 29%;
@@ -427,6 +438,29 @@ body {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 768px) {
+  .promo__wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+  }
+  .promo__wrapper .promo__title {
+    width: 100%;
+  }
+  .promo__wrapper .promo__photo {
+    margin-bottom: 30px;
+  }
+  .promo__wrapper .promo__button {
+    margin-bottom: 35px;
+  }
+}
+@media (max-width: 380px) {
+  .promo__wrapper .promo__title {
+    font-size: 3rem;
+  }
+}
 
 .promo__decorate-element {
   left: 0;
@@ -481,6 +515,36 @@ body {
 
 .projects__wrapper {
   margin-top: 50px;
+}
+@media (max-width: 768px) {
+  .projects__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .projects__wrapper > * {
+    flex-basis: 48%;
+  }
+  .projects__wrapper {
+    margin: 0 20px;
+  }
+  .projects__wrapper .project {
+    margin-top: 0;
+  }
+}
+@media (max-width: 380px) {
+  .projects__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .projects__wrapper > * {
+    flex-basis: 96%;
+  }
+  .projects__wrapper {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .project {
@@ -554,6 +618,34 @@ body {
 
 .certificates__wrapper {
   margin-top: 5%;
+}
+@media (max-width: 768px) {
+  .certificates__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .certificates__wrapper > * {
+    flex-basis: 48%;
+  }
+  .certificates__wrapper {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+@media (max-width: 380px) {
+  .certificates__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .certificates__wrapper > * {
+    flex-basis: 96%;
+  }
+  .certificates__wrapper {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .certificate__image {

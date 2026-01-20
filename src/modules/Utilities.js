@@ -14,6 +14,8 @@ export function addElementsLadder(parent, dataElement, creatorElementFunction) {
   let countElements = 3;
   let counterMultiplier = 3;
 
+  parent.replaceChildren();
+
   dataElement.forEach((element) => {
     const htmlElement = creatorElementFunction(element);
     htmlElement.style.marginTop = `${
@@ -24,6 +26,19 @@ export function addElementsLadder(parent, dataElement, creatorElementFunction) {
       countElements = 3;
       counterMultiplier = 3;
     }
+    parent.append(htmlElement);
+  });
+}
+
+export function addElementsWithoutLadder(
+  parent,
+  dataElement,
+  creatorElementFunction
+) {
+  parent.replaceChildren();
+  dataElement.forEach((element) => {
+    const htmlElement = creatorElementFunction(element, true);
+    htmlElement.style.marginBottom = `${20}px`;
     parent.append(htmlElement);
   });
 }

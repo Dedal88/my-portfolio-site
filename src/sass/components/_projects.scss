@@ -9,6 +9,18 @@
 
 .projects__wrapper {
   margin-top: 50px;
+  @include media-tablet {
+    @include columns($width: 48%);
+    margin: 0 20px;
+    .project {
+      margin-top: 0;
+    }
+  }
+  @include media-mobile {
+    @include columns($width: 96%);
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .project {

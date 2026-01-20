@@ -6,6 +6,29 @@
   padding-top: 100px;
   display: flex;
   justify-content: space-between;
+  @include media-tablet {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+    .promo__title {
+      width: 100%;
+    }
+    .promo__photo {
+      margin-bottom: 30px;
+    }
+
+    .promo__button {
+      margin-bottom: 35px;
+    }
+  }
+
+  @include media-mobile {
+    .promo__title {
+      font-size: 3rem;
+    }
+  }
 }
 
 .promo__decorate-element {
