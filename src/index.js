@@ -10,41 +10,30 @@ import { sidebarMenu } from './modules/sidebar-menu';
 
 const dataProjects = [
   {
-    imageUrl: './src/img/icons/monitor.svg',
-    title: 'Проект 1',
-    description: 'Текст описывающий проект 1',
-    deployUrl: '',
+    imageUrl: './src/img/icons/rest-api.webp',
+    title: 'Analog Postman',
+    description: 'Легковесный веб-клиент для тестирования HTTP API',
+    deployUrl: 'https://rest-api-zeta-inky.vercel.app/en',
   },
   {
-    imageUrl: './src/img/icons/monitor.svg',
-    title: 'Проект 2',
-    description: 'Текст описывающий проект 2',
-    deployUrl: '',
+    imageUrl: './src/img/icons/spinning.svg',
+    title: 'Справочник-спиннингиста',
+    description: 'Веб-приложение для любителей ловли хищной рыбы',
+    deployUrl: 'https://dedal88.github.io/spinning-handbook/',
   },
   {
-    imageUrl: './src/img/icons/monitor.svg',
-    title: 'Проект 3',
-    description: 'Текст описывающий проект 3',
-    deployUrl: '',
+    imageUrl: './src/img/icons/global-carbon.svg',
+    title: 'Global carbon dioxide emissions',
+    description:
+      'Веб-приложение о глобальных выбросах углекислого газа по странам',
+    deployUrl: 'https://global-carbon.vercel.app/',
   },
 
   {
-    imageUrl: './src/img/icons/monitor.svg',
-    title: 'Проект 4',
-    description: 'Текст описывающий проект 4',
-    deployUrl: '',
-  },
-  {
-    imageUrl: './src/img/icons/monitor.svg',
-    title: 'Проект 5',
-    description: 'Текст описывающий проект 5',
-    deployUrl: '',
-  },
-  {
-    imageUrl: './src/img/icons/monitor.svg',
-    title: 'Проект 6',
-    description: 'Текст описывающий проект 6',
-    deployUrl: '',
+    imageUrl: './src/img/icons/nonograms.svg',
+    title: 'Веб игра «Нонограммы»',
+    description: 'Интерактивная игра с несколькими головоломками-нонограммами',
+    deployUrl: 'https://dedal88.github.io/nonograms/',
   },
 ];
 
