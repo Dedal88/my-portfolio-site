@@ -5,7 +5,8 @@ module.exports = {
 
   entry: {
     main: './src/index.js',
-    certificates: './src/pages/certificates/script.js',
+    certificates: './src/pages/certificates/certificates.js',
+    portfolio: './src/pages/portfolio/portfolio.js',
   },
 
   output: {

@@ -1,8 +1,6 @@
 import {
   createElement,
-  addElementsLadder,
-  animationAppearanceElements,
-  addElementsWithoutLadder,
+  connectAnimationAppearanceElements,
 } from '../../modules/Utilities';
 import { headerScroll } from '../../modules/Header';
 import { sidebarMenu } from '../../modules/sidebar-menu';
@@ -102,26 +100,9 @@ function createCertificate(options) {
 }
 
 const certificatesContainer = document.querySelector('.certificates__wrapper');
-const elementsToWatch = certificatesContainer.children;
 
-const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-function handleScreenChange(e) {
-  if (e.matches) {
-    addElementsLadder(
-      certificatesContainer,
-      dataCertificates,
-      createCertificate
-    );
-  } else {
-    addElementsWithoutLadder(
-      certificatesContainer,
-      dataCertificates,
-      createCertificate
-    );
-  }
-  animationAppearanceElements(elementsToWatch);
-}
-
-handleScreenChange(mediaQuery);
-mediaQuery.addEventListener('change', handleScreenChange);
+connectAnimationAppearanceElements(
+  certificatesContainer,
+  dataCertificates,
+  createCertificate,
+);

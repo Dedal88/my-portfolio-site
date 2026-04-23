@@ -33,7 +33,7 @@ export function addElementsLadder(parent, dataElement, creatorElementFunction) {
 export function addElementsWithoutLadder(
   parent,
   dataElement,
-  creatorElementFunction
+  creatorElementFunction,
 ) {
   parent.replaceChildren();
   dataElement.forEach((element) => {
@@ -63,4 +63,105 @@ export function animationAppearanceElements(elementsToWatch) {
   for (const element of elementsToWatch) {
     observer.observe(element);
   }
+}
+
+export function createProject(options, isMobile = false) {
+  const {
+    imageUrl = '',
+    title = '',
+    description = '',
+    deployUrl = '',
+  } = options;
+
+  const projectWrapper = createElement({
+    tag: 'article',
+    classes: ['project'],
+  });
+
+  const projectImage = createElement({
+    tag: 'img',
+    classes: ['project__image'],
+  });
+  projectImage.setAttribute('src', imageUrl);
+  projectImage.setAttribute('alt', 'project image');
+
+  const projectTitle = createElement({
+    tag: 'h4',
+    classes: ['project__title'],
+    text: title,
+  });
+
+  const projectText = createElement({
+    tag: 'p',
+    classes: ['project__text'],
+    text: description,
+  });
+
+  let buttonWrapper;
+
+  if (isMobile) {
+    buttonWrapper = createElement({
+      classes: ['project__button-wrapper'],
+    });
+  } else {
+    buttonWrapper = createElement({
+      classes: ['project__button-wrapper', 'project__button_disabled_true'],
+    });
+  }
+
+  const projectButton = createElement({
+    tag: 'button',
+    text: 'Cмотреть деплой',
+    classes: ['button', 'project__button'],
+  });
+
+  const projectButtonLink = createElement({
+    tag: 'a',
+  });
+  projectButtonLink.setAttribute('href', deployUrl);
+  projectButtonLink.setAttribute('target', '_blank');
+  projectButtonLink.append(projectButton);
+  buttonWrapper.append(projectButtonLink);
+
+  projectWrapper.append(projectImage, projectTitle, projectText, buttonWrapper);
+
+  if (!isMobile) {
+    projectWrapper.addEventListener('mouseenter', (e) => {
+      buttonWrapper.classList.remove('project__button_disabled_true');
+    });
+
+    projectWrapper.addEventListener('mouseleave', () => {
+      buttonWrapper.classList.add('project__button_disabled_true');
+    });
+  }
+  return projectWrapper;
+}
+
+export function connectAnimationAppearanceElements(
+  elementsContainer,
+  dataElements,
+  functionCreatorElement,
+) {
+  const elementsToWatch = elementsContainer.children;
+  const mediaQuery = window.matchMedia('(min-width: 768px)');
+
+  function handleScreenChange(e) {
+    if (e.matches) {
+      addElementsLadder(
+        elementsContainer,
+        dataElements,
+        functionCreatorElement,
+      );
+    } else {
+      addElementsWithoutLadder(
+        elementsContainer,
+        dataElements,
+        functionCreatorElement,
+      );
+    }
+    animationAppearanceElements(elementsToWatch);
+  }
+
+  handleScreenChange(mediaQuery);
+  mediaQuery.addEventListener('change', handleScreenChange);
 }

@@ -480,7 +480,6 @@ body {
 }
 
 .promo__title {
-  font-size: 3.5rem;
   width: 75%;
   margin-bottom: 16px;
   font-size: 3.8rem;
@@ -749,6 +748,14 @@ body {
   .slider__indication {
     column-gap: calc(5px + 5 * (100vw - 320px) / 530);
   }
+}
+.portfolio__title {
+  width: 75%;
+  margin-bottom: 16px;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: normal;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=style.css.map */

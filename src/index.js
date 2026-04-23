@@ -1,133 +1,22 @@
 import {
-  createElement,
-  addElementsLadder,
-  animationAppearanceElements,
-  addElementsWithoutLadder,
+  createProject,
+  connectAnimationAppearanceElements,
 } from '../src/modules/Utilities';
 
 import { headerScroll } from './modules/Header';
 import { sidebarMenu } from './modules/sidebar-menu';
-
-const dataProjects = [
-  {
-    imageUrl: './src/img/icons/rest-api.webp',
-    title: 'Analog Postman',
-    description: 'Легковесный веб-клиент для тестирования HTTP API',
-    deployUrl: 'https://rest-api-zeta-inky.vercel.app/en',
-  },
-  {
-    imageUrl: './src/img/icons/spinning.svg',
-    title: 'Справочник-спиннингиста',
-    description: 'Веб-приложение для любителей ловли хищной рыбы',
-    deployUrl: 'https://dedal88.github.io/spinning-handbook/',
-  },
-  {
-    imageUrl: './src/img/icons/global-carbon.svg',
-    title: 'Global carbon dioxide emissions',
-    description:
-      'Веб-приложение о глобальных выбросах углекислого газа по странам',
-    deployUrl: 'https://global-carbon.vercel.app/',
-  },
-
-  {
-    imageUrl: './src/img/icons/nonograms.svg',
-    title: 'Веб игра «Нонограммы»',
-    description: 'Интерактивная игра с несколькими головоломками-нонограммами',
-    deployUrl: 'https://dedal88.github.io/nonograms/',
-  },
-];
+import { dataProjects } from './modules/Data';
 
 headerScroll();
 sidebarMenu();
 
-function createProject(options, isMobile = false) {
-  const {
-    imageUrl = '',
-    title = '',
-    description = '',
-    deployUrl = '',
-  } = options;
-
-  const projectWrapper = createElement({
-    tag: 'article',
-    classes: ['project'],
-  });
-
-  const projectImage = createElement({
-    tag: 'img',
-    classes: ['project__image'],
-  });
-  projectImage.setAttribute('src', imageUrl);
-  projectImage.setAttribute('alt', 'project image');
-
-  const projectTitle = createElement({
-    tag: 'h4',
-    classes: ['project__title'],
-    text: title,
-  });
-
-  const projectText = createElement({
-    tag: 'p',
-    classes: ['project__text'],
-    text: description,
-  });
-
-  let buttonWrapper;
-
-  if (isMobile) {
-    buttonWrapper = createElement({
-      classes: ['project__button-wrapper'],
-    });
-  } else {
-    buttonWrapper = createElement({
-      classes: ['project__button-wrapper', 'project__button_disabled_true'],
-    });
-  }
-
-  const projectButton = createElement({
-    tag: 'button',
-    text: 'Cмотреть деплой',
-    classes: ['button', 'project__button'],
-  });
-
-  const projectButtonLink = createElement({
-    tag: 'a',
-  });
-  projectButtonLink.setAttribute('href', deployUrl);
-  projectButtonLink.setAttribute('target', '_blank');
-  projectButtonLink.append(projectButton);
-  buttonWrapper.append(projectButtonLink);
-
-  projectWrapper.append(projectImage, projectTitle, projectText, buttonWrapper);
-
-  if (!isMobile) {
-    projectWrapper.addEventListener('mouseenter', (e) => {
-      buttonWrapper.classList.remove('project__button_disabled_true');
-    });
-
-    projectWrapper.addEventListener('mouseleave', () => {
-      buttonWrapper.classList.add('project__button_disabled_true');
-    });
-  }
-  return projectWrapper;
-}
-
 const projectsContainer = document.querySelector('.projects__wrapper');
-const elementsToWatch = projectsContainer.children;
 
-const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-function handleScreenChange(e) {
-  if (e.matches) {
-    addElementsLadder(projectsContainer, dataProjects, createProject);
-  } else {
-    addElementsWithoutLadder(projectsContainer, dataProjects, createProject);
-  }
-  animationAppearanceElements(elementsToWatch);
-}
-
-handleScreenChange(mediaQuery);
-mediaQuery.addEventListener('change', handleScreenChange);
+connectAnimationAppearanceElements(
+  projectsContainer,
+  dataProjects,
+  createProject,
+);
 
 ////////////////slider//////////////////////////////
 
