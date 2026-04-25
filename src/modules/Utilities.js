@@ -123,7 +123,7 @@ export function animationAppearanceElements(
   const elementsToWatch = elementsContainer.children;
   const mediaQuery = window.matchMedia('(min-width: 768px)');
 
-  (function handleScreenChange(e) {
+  function handleScreenChange(e) {
     if (e.matches) {
       addElementsLadder(
         elementsContainer,
@@ -160,7 +160,9 @@ export function animationAppearanceElements(
     for (const element of elementsToWatch) {
       observer.observe(element);
     }
-  })(mediaQuery);
+  }
+
+  handleScreenChange(mediaQuery);
 
   mediaQuery.addEventListener('change', handleScreenChange);
 }
