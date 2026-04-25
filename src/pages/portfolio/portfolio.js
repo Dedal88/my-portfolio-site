@@ -1,6 +1,6 @@
 import {
   createProject,
-  connectAnimationAppearanceElements,
+  animationAppearanceElements,
 } from '../../modules/Utilities';
 import { headerScroll } from '../../modules/Header';
 import { sidebarMenu } from '../../modules/sidebar-menu';
@@ -11,8 +11,4 @@ sidebarMenu();
 
 const projectsContainer = document.querySelector('.projects__wrapper');
 
-connectAnimationAppearanceElements(
-  projectsContainer,
-  dataProjects,
-  createProject,
-);
+animationAppearanceElements(projectsContainer, dataProjects, createProject);

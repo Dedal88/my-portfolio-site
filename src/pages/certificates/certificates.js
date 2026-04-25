@@ -1,6 +1,6 @@
 import {
   createElement,
-  connectAnimationAppearanceElements,
+  animationAppearanceElements,
 } from '../../modules/Utilities';
 import { headerScroll } from '../../modules/Header';
 import { sidebarMenu } from '../../modules/sidebar-menu';
@@ -101,7 +101,7 @@ function createCertificate(options) {
 
 const certificatesContainer = document.querySelector('.certificates__wrapper');
 
-connectAnimationAppearanceElements(
+animationAppearanceElements(
   certificatesContainer,
   dataCertificates,
   createCertificate,

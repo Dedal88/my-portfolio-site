@@ -43,28 +43,6 @@ export function addElementsWithoutLadder(
   });
 }
 
-export function animationAppearanceElements(elementsToWatch) {
-  const observerCallback = (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  };
-
-  const observerOptions = {
-    rootMargin: '0px 0px -50px 0px',
-    threshold: 0.2,
-  };
-
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-  for (const element of elementsToWatch) {
-    observer.observe(element);
-  }
-}
-
 export function createProject(options, isMobile = false) {
   const {
     imageUrl = '',
@@ -137,7 +115,7 @@ export function createProject(options, isMobile = false) {
   return projectWrapper;
 }
 
-export function connectAnimationAppearanceElements(
+export function animationAppearanceElements(
   elementsContainer,
   dataElements,
   functionCreatorElement,
@@ -145,7 +123,7 @@ export function connectAnimationAppearanceElements(
   const elementsToWatch = elementsContainer.children;
   const mediaQuery = window.matchMedia('(min-width: 768px)');
 
-  function handleScreenChange(e) {
+  (function handleScreenChange(e) {
     if (e.matches) {
       addElementsLadder(
         elementsContainer,
@@ -159,9 +137,30 @@ export function connectAnimationAppearanceElements(
         functionCreatorElement,
       );
     }
-    animationAppearanceElements(elementsToWatch);
-  }
 
-  handleScreenChange(mediaQuery);
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observerOptions = {
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.2,
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions,
+    );
+
+    for (const element of elementsToWatch) {
+      observer.observe(element);
+    }
+  })(mediaQuery);
+
   mediaQuery.addEventListener('change', handleScreenChange);
 }
