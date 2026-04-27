@@ -7,6 +7,7 @@ module.exports = {
     main: './src/index.js',
     certificates: './src/pages/certificates/certificates.js',
     portfolio: './src/pages/portfolio/portfolio.js',
+    experience: './src/pages/experience/experience.js',
   },
 
   output: {

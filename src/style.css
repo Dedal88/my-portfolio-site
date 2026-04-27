@@ -509,7 +509,7 @@ body {
 
 .projects {
   padding-top: 110px;
-  padding-bottom: 20px;
+  padding-bottom: 80px;
 }
 
 .projects__wrapper {
@@ -756,6 +756,10 @@ body {
   font-style: normal;
   font-weight: normal;
   color: #ffffff;
+}
+
+.experience__job-container {
+  margin-bottom: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */
