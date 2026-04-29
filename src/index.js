@@ -1,14 +1,17 @@
 import {
   createProject,
   animationAppearanceElements,
+  createElement,
 } from '../src/modules/Utilities';
 
 import { headerScroll } from './modules/Header';
 import { sidebarMenu } from './modules/sidebar-menu';
 import { dataProjects } from './modules/Data';
+import { connectModalWindow } from './modules/Modal';
 
 headerScroll();
 sidebarMenu();
+connectModalWindow();
 
 const projectsContainer = document.querySelector('.projects__wrapper');
 

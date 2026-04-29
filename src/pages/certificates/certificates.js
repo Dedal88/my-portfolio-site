@@ -4,6 +4,7 @@ import {
 } from '../../modules/Utilities';
 import { headerScroll } from '../../modules/Header';
 import { sidebarMenu } from '../../modules/sidebar-menu';
+import { connectModalWindow } from '../../modules/Modal';
 
 const dataCertificates = [
   {
@@ -68,8 +69,8 @@ const dataCertificates = [
 ];
 
 headerScroll();
-
 sidebarMenu();
+connectModalWindow();
 
 function createCertificate(options) {
   const { imageUrl = '', accreditationUrl = '' } = options;
