@@ -27,6 +27,20 @@ class modalWindow {
     modalCloseButton.addEventListener('click', function () {
       modalWrap.classList.remove('open');
     });
+
+    modalWrap.addEventListener('click', function (event) {
+      if (event.target === modalWrap) {
+        modalWrap.classList.remove('open');
+      }
+    });
+
+    const handleEscapeKey = function (event) {
+      if (event.key === 'Escape' && modalWrap.classList.contains('open')) {
+        modalWrap.classList.remove('open');
+      }
+    };
+    document.addEventListener('keydown', handleEscapeKey);
+
     return modalWrap;
   }
 
