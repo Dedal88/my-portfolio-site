@@ -17,8 +17,6 @@ const projectsContainer = document.querySelector('.projects__wrapper');
 
 animationAppearanceElements(projectsContainer, dataProjects, createProject);
 
-////////////////slider//////////////////////////////
-
 const sliderImages = document.querySelectorAll('.slider__img');
 const sliderLine = document.querySelector('.slider__line');
 const sliderDots = document.querySelectorAll('.slider__dot');
@@ -39,7 +37,22 @@ function showSlide() {
   sliderImages.forEach((item) => (item.style.width = sliderWidth + 'px'));
   rollSlider();
 }
-showSlide();
+
+function initSlider() {
+  Promise.all(
+    Array.from(sliderImages).map((img) => {
+      if (img.complete) return Promise.resolve();
+      return new Promise((resolve) => {
+        img.onload = resolve;
+        img.onerror = resolve;
+      });
+    }),
+  ).then(() => {
+    showSlide();
+  });
+}
+
+initSlider();
 
 function nextSlide() {
   sliderCount++;
