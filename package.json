@@ -1,0 +1,33 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "description": "MalkovSV cv-portfolio site",
+  "homepage": "https://github.com/Dedal88/my-portfolio-site#readme",
+  "bugs": {
+    "url": "https://github.com/Dedal88/my-portfolio-site/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dedal88/my-portfolio-site.git"
+  },
+  "license": "ISC",
+  "author": "MalkovSV",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "style": "sass --watch src/sass/main.scss src/style.css",
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "watch": "webpack --watch --mode development"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "babel-loader": "^10.0.0",
+    "core-js": "^3.47.0",
+    "normalize.css": "^8.0.1",
+    "sass": "^1.96.0",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  }
+}

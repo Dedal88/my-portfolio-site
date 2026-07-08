@@ -1,0 +1,14 @@
+// @use '../abstracts/placeholders' as *;
+// @use '../abstracts/varibles' as *;
+@use '../abstracts/mixins' as *;
+
+.navigation {
+  font-size: 1.7rem;
+  line-height: 2.8rem;
+}
+
+.header__navigation {
+  @include media-tablet {
+    display: none;
+  }
+}

@@ -1,0 +1,10 @@
+.decorate-element {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.top-right-corner-element {
+  top: 0;
+  right: 0;
+}

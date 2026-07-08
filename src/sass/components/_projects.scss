@@ -1,0 +1,83 @@
+@use '../abstracts/varibles' as *;
+@use '../abstracts/placeholders' as *;
+@use '../abstracts/mixins' as *;
+
+.projects {
+  padding-top: 110px;
+  padding-bottom: 80px;
+}
+
+.projects__wrapper {
+  margin-top: 50px;
+  @include media-tablet {
+    @include columns($width: 48%);
+    margin: 0 20px;
+    .project {
+      margin-top: 0;
+    }
+  }
+  @include media-mobile {
+    @include columns($width: 96%);
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.project {
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  background: $color-black-50;
+  @include gradient-border($color1: $color-grey-2, $color2: $color-black-50);
+
+  > * {
+    margin-top: 8%;
+    margin-left: 7%;
+    margin-right: 2%;
+  }
+
+  &:hover {
+    @include gradient-border();
+  }
+
+  @extend %transition;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.project.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project__button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  @extend %transition;
+}
+
+.project__button {
+  height: 40px;
+}
+
+.project__button-wrapper:not(.project__button_disabled_true) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project__title {
+  @include font($size: 1.8rem);
+}
+
+.project__text {
+  @include font($size: 1.6rem, $color: $color-grey-2);
+}
+
+.project__image {
+  width: 40px;
+  height: 40px;
+}
