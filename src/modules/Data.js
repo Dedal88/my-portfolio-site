@@ -1,6 +1,7 @@
 export const dataProjects = [
   {
-    imageUrl: '/src/img/icons/rest-api.webp',
+    // imageUrl: '/src/img/icons/rest-api.webp',
+    imageUrl: '../img/icons/rest-api.webp',
     title: 'Analog Postman',
     description: 'Легковесный веб-клиент для тестирования HTTP API',
     deployUrl: 'https://rest-api-zeta-inky.vercel.app/en',
