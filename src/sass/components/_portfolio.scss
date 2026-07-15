@@ -1,7 +1,0 @@
-@use '../abstracts/mixins' as *;
-
-.portfolio__title {
-  width: 75%;
-  margin-bottom: 16px;
-  @include font($size: 2.5rem);
-}
