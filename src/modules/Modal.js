@@ -64,7 +64,7 @@ function createModalContactsContent() {
     tag: 'img',
     classes: ['social-icon__image'],
   });
-  emailIcon.setAttribute('src', '../../../src/img/icons/mail.svg');
+  emailIcon.setAttribute('src', './src/img/icons/mail.svg');
   emailIcon.setAttribute('alt', 'Email icon');
 
   const emailText = document.createTextNode(
@@ -82,7 +82,7 @@ function createModalContactsContent() {
     tag: 'img',
     classes: ['social-icon__image'],
   });
-  telegramIcon.setAttribute('src', '../../../src/img/icons/telegram.svg');
+  telegramIcon.setAttribute('src', './src/img/icons/telegram.svg');
   telegramIcon.setAttribute('alt', 'Telegram icon');
 
   const telegramText = document.createTextNode('Tелеграм:\u00A0\u00A0 Sergey');
@@ -98,7 +98,7 @@ function createModalContactsContent() {
     tag: 'img',
     classes: ['social-icon__image'],
   });
-  phoneIcon.setAttribute('src', '../../../src/img/icons/phone.svg');
+  phoneIcon.setAttribute('src', './src/img/icons/phone.svg');
   phoneIcon.setAttribute('alt', 'Phone icon');
 
   const phoneText = document.createTextNode(
