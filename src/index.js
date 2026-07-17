@@ -1,8 +1,10 @@
+import './style.css';
+
 import {
   createProject,
   animationAppearanceElements,
   createElement,
-} from '../src/modules/Utilities';
+} from './modules/Utilities';
 
 import { headerScroll } from './modules/Header';
 import { sidebarMenu } from './modules/sidebar-menu';

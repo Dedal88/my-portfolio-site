@@ -1,3 +1,5 @@
+import '../../style.css';
+
 import {
   createProject,
   animationAppearanceElements,

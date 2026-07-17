@@ -15,6 +15,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "deploy": "gh-pages -d dist",
     "style": "sass --watch src/sass/main.scss src/style.css",
     "dev": "webpack --mode development",
     "prod": "webpack --mode production",
@@ -22,11 +23,19 @@
   },
   "devDependencies": {
     "@babel/core": "^7.28.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.29.7",
     "@babel/preset-env": "^7.28.5",
     "babel-loader": "^10.0.0",
+    "copy-webpack-plugin": "^14.0.0",
     "core-js": "^3.47.0",
+    "css-loader": "^7.1.4",
+    "gh-pages": "^6.3.0",
+    "html-webpack-plugin": "^5.6.7",
+    "mini-css-extract-plugin": "^2.10.2",
     "normalize.css": "^8.0.1",
     "sass": "^1.96.0",
+    "sass-loader": "^17.0.0",
+    "style-loader": "^4.0.0",
     "webpack": "^5.104.1",
     "webpack-cli": "^6.0.1"
   }
