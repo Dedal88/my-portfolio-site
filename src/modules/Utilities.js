@@ -10,6 +10,12 @@ export function createElement(options) {
   return element;
 }
 
+export function getAssetPath(relativeUrl) {
+  const isNestedPage = window.location.pathname.includes('/src/pages/');
+  const prefix = isNestedPage ? '../../../' : './';
+  return `${prefix}${relativeUrl}`;
+}
+
 export function addElementsLadder(parent, dataElement, creatorElementFunction) {
   let countElements = 3;
   let counterMultiplier = 3;
@@ -60,7 +66,7 @@ export function createProject(options, isMobile = false) {
     tag: 'img',
     classes: ['project__image'],
   });
-  projectImage.setAttribute('src', imageUrl);
+  projectImage.setAttribute('src', getAssetPath(imageUrl));
   projectImage.setAttribute('alt', 'project image');
 
   const projectTitle = createElement({
